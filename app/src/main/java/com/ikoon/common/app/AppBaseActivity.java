@@ -11,7 +11,9 @@ import com.exsun.commonlibrary.base.BaseView;
 import com.exsun.commonlibrary.utils.TUtil;
 
 /**
- * Created by MrKong on 2017/10/26.
+ *
+ * @author MrKong
+ * @date 2017/10/26
  */
 
 public abstract class AppBaseActivity<M extends BaseModel, P extends BasePresenter> extends BaseActivity implements BaseView
@@ -47,7 +49,7 @@ public abstract class AppBaseActivity<M extends BaseModel, P extends BasePresent
     }
     
     /**
-     * 初始化presenter层
+     * 初始化presenter
      *
      */
     protected abstract void initPresenter();

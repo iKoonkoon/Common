@@ -1,5 +1,7 @@
 package com.ikoon.common.app;
 
+import android.util.Log;
+
 import com.exsun.commonlibrary.base.BaseApi;
 import com.exsun.commonlibrary.frame.network.http.HttpManager;
 import com.exsun.commonlibrary.frame.network.listener.HttpOnNextListener;
@@ -17,12 +19,13 @@ import retrofit2.Retrofit;
 import rx.Observable;
 
 /**
- * Created by MrKong on 2017/9/13.
+ *
+ * @author MrKong
+ * @date 2017/9/13
  */
 
 public class AppBaseApi extends BaseApi
 {
-    
     private final HttpManager httpManager;
     private HttpApiService httpService;
     
@@ -94,10 +97,6 @@ public class AppBaseApi extends BaseApi
         
         return httpService;
     }
-    
-    
-    
-    
     
     
     
