@@ -9,6 +9,7 @@ import com.exsun.commonlibrary.base.BaseModel;
 import com.exsun.commonlibrary.base.BasePresenter;
 import com.exsun.commonlibrary.base.BaseView;
 import com.exsun.commonlibrary.utils.TUtil;
+import com.exsun.commonlibrary.utils.view.progress.SVProgressHUD;
 
 /**
  *
@@ -79,5 +80,52 @@ public abstract class AppBaseActivity<M extends BaseModel, P extends BasePresent
      * @param context
      */
     public abstract void doBusiness(Context context);
+    
+    /**
+     * 展示弹框
+     *
+     * @param context
+     * @param info
+     */
+    public void showDialog(Context context, String info)
+    {
+        SVProgressHUD.showWithStatus(context, info);
+    }
+    
+    /**
+     * 展示弹框
+     *
+     * @param context
+     * @param info
+     */
+    public void showDialog(Context context, int info)
+    {
+        SVProgressHUD.showWithStatus(context, getString(info));
+    }
+    
+    /**
+     * 取消弹框
+     *
+     * @param context
+     */
+    public void dismissDialog(Context context)
+    {
+        if (SVProgressHUD.isShowing(this))
+        {
+            SVProgressHUD.dismiss(context);
+        }
+    }
+    
+    @Override
+    public void onBackPressed()
+    {
+        if (SVProgressHUD.isShowing(this))
+        {
+            dismissDialog(this);
+        } else
+        {
+            finish();
+        }
+    }
   
 }

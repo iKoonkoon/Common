@@ -12,8 +12,8 @@ import android.view.View;
 import com.exsun.commonlibrary.R;
 
 /**
- * @author yuyh.
- * @date 16/4/9.
+ * @author MrKong
+ * @date 16/4/9
  */
 public class DialogUtils
 {

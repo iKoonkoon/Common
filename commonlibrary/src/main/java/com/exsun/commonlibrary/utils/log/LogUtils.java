@@ -5,7 +5,7 @@ import android.os.Environment;
 import android.util.Log;
 
 import com.exsun.commonlibrary.BuildConfig;
-import com.exsun.commonlibrary.utils.AppUtils;
+import com.exsun.commonlibrary.utils.app.AppUtils;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;

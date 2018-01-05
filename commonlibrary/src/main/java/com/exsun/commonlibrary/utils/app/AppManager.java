@@ -1,4 +1,4 @@
-package com.exsun.commonlibrary.utils;
+package com.exsun.commonlibrary.utils.app;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -8,6 +8,9 @@ import java.util.Stack;
 
 /**
  * activity管理
+ *
+ * @author MrKong
+ * @date 18/1/5
  */
 public class AppManager
 {
@@ -62,7 +65,7 @@ public class AppManager
             return activity;
         } catch (Exception e)
         {
-//            e.printStackTrace();
+            e.printStackTrace();
             return null;
         }
     }
@@ -159,6 +162,7 @@ public class AppManager
     public void returnToActivity(Class<?> cls)
     {
         while (activityStack.size() != 0)
+        {
             if (activityStack.peek().getClass() == cls)
             {
                 break;
@@ -166,6 +170,7 @@ public class AppManager
             {
                 finishActivity(activityStack.peek());
             }
+        }
     }
 
 

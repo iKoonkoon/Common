@@ -3,26 +3,28 @@ package com.exsun.commonlibrary.utils.toast;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.exsun.commonlibrary.utils.AppUtils;
+import com.exsun.commonlibrary.utils.app.AppUtils;
 
 
 /**
- * Toast工具类，解决多个Toast同时出现的问题
+ * 1.封装Toast
+ * 2.解决多个Toast同时出现的问题
  *
- * @author yuyh.
- * @date 16/4/9.
+ * @author MrKong
+ * @date 18/1/5
  */
 public class ToastUtils
 {
 
     private Toast mToast;
-    private Context context = AppUtils.getAppContext();
-
+    private Context mContext = AppUtils.getAppContext();
+    
     /**********************
      * 非连续弹出的Toast
-     ***********************/
+     **********************/
+    
     public void showSingleToast(int resId)
-    { //R.string.**
+    {
         getSingleToast(resId, Toast.LENGTH_SHORT).show();
     }
 
@@ -40,10 +42,10 @@ public class ToastUtils
     {
         getSingleToast(text, Toast.LENGTH_LONG).show();
     }
-
-    /***********************
+    
+    /**********************
      * 连续弹出的Toast
-     ************************/
+     **********************/
     public void showToast(int resId)
     {
         getToast(resId, Toast.LENGTH_SHORT).show();
@@ -63,31 +65,47 @@ public class ToastUtils
     {
         getToast(text, Toast.LENGTH_LONG).show();
     }
-
+    
+    
+    
+    /**
+     * 连续调用不会连续弹出只是替换文本
+     *
+     * @param resId
+     * @param duration
+     * @return
+     */
     public Toast getSingleToast(int resId, int duration)
-    { // 连续调用不会连续弹出，只是替换文本
-        return getSingleToast(context.getResources().getText(resId).toString(), duration);
+    {
+        return getSingleToast(mContext.getResources().getText(resId).toString(), duration);
     }
 
     public Toast getSingleToast(String text, int duration)
     {
         if (mToast == null)
         {
-            mToast = Toast.makeText(context, text, duration);
+            mToast = Toast.makeText(mContext, text, duration);
         } else
         {
             mToast.setText(text);
         }
         return mToast;
     }
-
+    
+    /**
+     * 连续调用会连续弹出
+     *
+     * @param resId
+     * @param duration
+     * @return
+     */
     public Toast getToast(int resId, int duration)
-    { // 连续调用会连续弹出
-        return getToast(context.getResources().getText(resId).toString(), duration);
+    {
+        return getToast(mContext.getResources().getText(resId).toString(), duration);
     }
 
     public Toast getToast(String text, int duration)
     {
-        return Toast.makeText(context, text, duration);
+        return Toast.makeText(mContext, text, duration);
     }
 }

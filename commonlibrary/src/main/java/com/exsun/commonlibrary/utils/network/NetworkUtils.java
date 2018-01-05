@@ -16,7 +16,7 @@ import android.os.IBinder;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
-import com.exsun.commonlibrary.utils.AppUtils;
+import com.exsun.commonlibrary.utils.app.AppUtils;
 import com.exsun.commonlibrary.utils.log.LogUtils;
 
 import java.lang.reflect.Method;

@@ -2,7 +2,6 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -17,21 +16,5 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-
-    <Button
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        android:onClick="click"
-        android:textSize="20sp"
-        android:text="动态权限设置"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp"/>
-
-    <Button
-        android:id="@+id/btn_request"
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="动态权限设置RX"/>
 
 </LinearLayout>

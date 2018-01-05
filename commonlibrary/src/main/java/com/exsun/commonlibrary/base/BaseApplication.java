@@ -6,8 +6,12 @@ import android.content.res.Resources;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 
+import com.exsun.commonlibrary.utils.app.AppUtils;
+
 /**
- * Created by MrKong on 2017/9/11.
+ *
+ * @author MrKong
+ * @date 2017/9/11
  */
 
 public class BaseApplication extends MultiDexApplication
@@ -22,6 +26,10 @@ public class BaseApplication extends MultiDexApplication
     {
         super.onCreate();
         baseApplication = this;
+    
+        //初始化
+        AppUtils.init(getAppContext());
+        
     }
     
     public static void init(){

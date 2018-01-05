@@ -2,7 +2,7 @@ package com.exsun.commonlibrary.config;
 
 /**
  * Glide
- * fastjson.android
+ * fastJson
  * greenDAO
  *
  * Created by MrKong on 2017/9/12.

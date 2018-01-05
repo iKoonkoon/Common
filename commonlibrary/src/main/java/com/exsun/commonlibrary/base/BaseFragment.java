@@ -16,15 +16,19 @@ import com.exsun.commonlibrary.utils.TUtil;
 import com.exsun.commonlibrary.utils.toast.ToastUtils;
 
 /**
- * Created by MrKong on 2017/9/11.
+ *
+ * @author MrKong
+ * @date 2017/9/11
  */
 
 public abstract class BaseFragment<M extends BaseModel, P extends BasePresenter> extends Fragment
 {
-    public M mModel;
-    public P mPresenter;
+   
     private static final String TAG = "BaseFragment";
     public static final String STATE_SAVE_IS_HIDDEN = "state_save_is_hidden";
+    
+    public M mModel;
+    public P mPresenter;
 
     /**
      * 当前Activity渲染的视图View
@@ -177,7 +181,6 @@ public abstract class BaseFragment<M extends BaseModel, P extends BasePresenter>
         {
             ((ViewGroup) contentView.getParent()).removeView(contentView);
         }
-//        ButterKnife.unbind(this);
         super.onDestroyView();
         Log.d(TAG, "onDestroyView: ");
     }

@@ -1,6 +1,5 @@
 package com.exsun.commonlibrary.base;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -8,14 +7,16 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.view.Window;
 
-import com.exsun.commonlibrary.utils.AppManager;
+import com.exsun.commonlibrary.utils.app.AppManager;
 import com.exsun.commonlibrary.utils.StatusBarUtil;
 import com.exsun.commonlibrary.utils.toast.ToastUtils;
 import com.exsun.commonlibrary.utils.view.progress.SVProgressHUD;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 /**
- * Created by MrKong on 2017/9/11.
+ *
+ * @author MrKong
+ * @date 2017/9/11
  */
 
 public abstract class BaseActivity extends RxAppCompatActivity
@@ -54,8 +55,15 @@ public abstract class BaseActivity extends RxAppCompatActivity
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         // 设置状态栏
         setStatusBar();
+        
+        
+        
+        
+        
         // 把activity放到application栈中管理
         AppManager.getAppManager().addActivity(this);
+        
+        
         // 获取toast对象
         toastUtils = new ToastUtils();
     }
@@ -85,8 +93,31 @@ public abstract class BaseActivity extends RxAppCompatActivity
 //        ChangeModeController.setTheme(this, R.style.DayTheme, R.style.NightTheme);
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      * 通过Class跳转界面
+     *  不含Bundle
      *
      * @param cls
      */
@@ -115,7 +146,7 @@ public abstract class BaseActivity extends RxAppCompatActivity
     
     /**
      * 通过Class跳转界面 有回调
-     *
+     * 不含Bundle
      * @param cls
      * @param requestCode
      */
@@ -143,50 +174,5 @@ public abstract class BaseActivity extends RxAppCompatActivity
         startActivityForResult(intent, requestCode);
     }
     
-    /**
-     * 展示弹框
-     *
-     * @param context
-     * @param info
-     */
-    public void showDialog(Context context, String info)
-    {
-        SVProgressHUD.showWithStatus(context, info);
-    }
     
-    /**
-     * 展示弹框
-     *
-     * @param context
-     * @param info
-     */
-    public void showDialog(Context context, int info)
-    {
-        SVProgressHUD.showWithStatus(context, getString(info));
-    }
-    
-    /**
-     * 取消弹框
-     *
-     * @param context
-     */
-    public void dismissDialog(Context context)
-    {
-        if (SVProgressHUD.isShowing(this))
-        {
-            SVProgressHUD.dismiss(context);
-        }
-    }
-    
-    @Override
-    public void onBackPressed()
-    {
-        if (SVProgressHUD.isShowing(this))
-        {
-            dismissDialog(this);
-        } else
-        {
-            finish();
-        }
-    }
 }

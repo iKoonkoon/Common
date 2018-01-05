@@ -3,6 +3,8 @@ package com.exsun.commonlibrary.utils;
 import android.content.Context;
 import android.util.DisplayMetrics;
 
+import com.exsun.commonlibrary.utils.app.AppUtils;
+
 
 /**
  * @author yuyh.
