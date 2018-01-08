@@ -8,13 +8,12 @@ import android.support.v4.app.ActivityCompat;
 import android.view.Window;
 
 import com.exsun.commonlibrary.utils.app.AppManager;
-import com.exsun.commonlibrary.utils.StatusBarUtil;
+import com.exsun.commonlibrary.utils.other.StatusBarUtil;
 import com.exsun.commonlibrary.utils.toast.ToastUtils;
 import com.exsun.commonlibrary.utils.view.progress.SVProgressHUD;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 /**
- *
  * @author MrKong
  * @date 2017/9/11
  */
@@ -27,10 +26,7 @@ public abstract class BaseActivity extends RxAppCompatActivity
     protected void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        //设置布局之前配置
         doBeforeSetContentView();
-        //设置布局
-        setContentView(getLayoutId());
     }
     
     @Override
@@ -38,46 +34,27 @@ public abstract class BaseActivity extends RxAppCompatActivity
     {
         super.onDestroy();
         AppManager.getAppManager().finishActivity(this);
-        SVProgressHUD.mSVProgressHUD = null;
     }
     
     /**
      * setContentView之前配置
-     *
      */
     public void doBeforeSetContentView()
     {
-        // 设置昼夜主题
-        setTheme();
         // 设置无标题
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         // 设置竖屏
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         // 设置状态栏
         setStatusBar();
-        
-        
-        
-        
-        
-        // 把activity放到application栈中管理
+        // 栈中管理Activity
         AppManager.getAppManager().addActivity(this);
-        
-        
-        // 获取toast对象
+        // 获取Toast对象
         toastUtils = new ToastUtils();
     }
     
     /**
-     * 获取布局文件
-     *
-     * @return
-     */
-    protected abstract int getLayoutId();
-    
-    /**
      * 设置状态栏
-     *
      */
     public void setStatusBar()
     {
@@ -85,39 +62,8 @@ public abstract class BaseActivity extends RxAppCompatActivity
     }
     
     /**
-     * 设置主题
-     *
-     */
-    public void setTheme()
-    {
-//        ChangeModeController.setTheme(this, R.style.DayTheme, R.style.NightTheme);
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /**
      * 通过Class跳转界面
-     *  不含Bundle
+     * 不含Bundle
      *
      * @param cls
      */
@@ -130,8 +76,8 @@ public abstract class BaseActivity extends RxAppCompatActivity
      * 通过Class跳转界面
      * 含有Bundle
      *
-     * @param cls       跳转到的页面
-     * @param bundle    包含有传递的参数
+     * @param cls    跳转到的页面
+     * @param bundle 包含有传递的参数
      */
     public void startActivity(Class<?> cls, Bundle bundle)
     {
@@ -147,6 +93,7 @@ public abstract class BaseActivity extends RxAppCompatActivity
     /**
      * 通过Class跳转界面 有回调
      * 不含Bundle
+     *
      * @param cls
      * @param requestCode
      */
@@ -173,6 +120,5 @@ public abstract class BaseActivity extends RxAppCompatActivity
         }
         startActivityForResult(intent, requestCode);
     }
-    
     
 }

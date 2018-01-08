@@ -27,9 +27,8 @@ public class BaseApplication extends MultiDexApplication
         super.onCreate();
         baseApplication = this;
     
-        //初始化
+        // 初始化App
         AppUtils.init(getAppContext());
-        
     }
     
     public static void init(){

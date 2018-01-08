@@ -19,7 +19,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 
 import com.exsun.commonlibrary.R;
-import com.exsun.commonlibrary.utils.DimenUtils;
+import com.exsun.commonlibrary.utils.other.DimenUtils;
 
 
 /**

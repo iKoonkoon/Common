@@ -12,7 +12,7 @@ import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.widget.Toast;
 
-import com.exsun.commonlibrary.utils.PackageUtils;
+import com.exsun.commonlibrary.utils.other.PackageUtils;
 
 import java.io.File;
 

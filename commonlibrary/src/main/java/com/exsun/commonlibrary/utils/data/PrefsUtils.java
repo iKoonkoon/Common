@@ -63,10 +63,14 @@ public class PrefsUtils
         {
             String hex = get(key, (String) null);
             if (hex == null)
+            {
                 return null;
+            }
             byte[] bytes = HexUtils.decodeHex(hex.toCharArray());
             if (cipher != null)
+            {
                 bytes = cipher.decrypt(bytes);
+            }
             Object obj = ByteUtils.byteToObject(bytes);
             return obj;
         } catch (Exception e)
@@ -96,7 +100,9 @@ public class PrefsUtils
             {
                 byte[] bytes = ByteUtils.objectToByte(obj);
                 if (cipher != null)
+                {
                     bytes = cipher.encrypt(bytes);
+                }
                 put(key, HexUtils.encodeHexStr(bytes));
             }
         } catch (Exception e)

@@ -1,5 +1,7 @@
 package com.ikoon.common.view.activity;
 
+import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -10,6 +12,7 @@ import com.google.gson.Gson;
 import com.ikoon.common.R;
 import com.ikoon.common.api.GlobalUrls;
 import com.ikoon.common.api.TestAPI;
+import com.ikoon.common.app.AppBaseActivity;
 import com.ikoon.common.bean.BaseResultEntity;
 import com.ikoon.common.bean.HttpRequestEntityMessageInfos;
 import com.ikoon.common.bean.SubjectResulte;
@@ -23,28 +26,52 @@ import java.util.ArrayList;
  * @date 2017/9/13
  */
 
-public class MvcActivity extends RxAppCompatActivity implements HttpOnNextListener
+public class MvcActivity extends AppBaseActivity implements HttpOnNextListener
 {
     
-    private TextView tv_test;
-    private static final int MY_PERMISSION_REQUEST_CODE = 10000;
-    private Button btn_request;
-    private static final String TAG = "RxPermissionsSample";
     private TestAPI testAPI;
+    private TextView tv_test0;
+    private TextView tv_test1;
     
     @Override
-    protected void onCreate(Bundle savedInstanceState)
+    protected int getLayoutId()
     {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        tv_test = findViewById(R.id.tv_test);
-        btn_request = findViewById(R.id.btn_request);
+        return R.layout.activity_mvc;
+    }
+    
+    @Override
+    protected void initPresenter()
+    {
         
+    }
+    
+    @Override
+    protected void initEvent()
+    {
+        
+    }
+    
+    @Override
+    public void initData(Bundle bundle)
+    {
+        
+    }
+    
+    @Override
+    protected void initView()
+    {
+        tv_test0 = findViewById(R.id.tv_test0);
+        tv_test1 = findViewById(R.id.tv_test1);
+    }
+    
+    @Override
+    public void doBusiness(Context context)
+    {
+    
         testAPI = new TestAPI(this, this);
         testAPI.getApi("ztctest01", "tyu567");
-
     }
-
+    
     
     @Override
     public void onNext(String result, String method)
@@ -53,7 +80,7 @@ public class MvcActivity extends RxAppCompatActivity implements HttpOnNextListen
         {
             case GlobalUrls.LOGIN_URL:
                 BaseResultEntity<ArrayList<SubjectResulte>> subjectResulte = new Gson().fromJson(result, BaseResultEntity.class);
-                tv_test.setText("统一post返回：\n" + subjectResulte.getReturnValue().getToken_type() + "\naccess_token" + subjectResulte.getReturnValue().getAccess_token());
+                tv_test0.setText("统一post返回：\n" + subjectResulte.getReturnValue().getToken_type() + "\naccess_token" + subjectResulte.getReturnValue().getAccess_token());
                 
                 GlobalUrls.TOKEN_CHANGE = GlobalUrls.BEARER + subjectResulte.getReturnValue().getAccess_token();
                 testAPI.postApi(new HttpRequestEntityMessageInfos(1, 10));
@@ -71,6 +98,6 @@ public class MvcActivity extends RxAppCompatActivity implements HttpOnNextListen
     @Override
     public void onError(ApiException e, String method)
     {
-        tv_test.setText("失败：" + method + "\ncode=" + e.getCode() + "\nmsg:" + e.getDisplayMessage());
+        tv_test0.setText("失败：" + method + "\ncode=" + e.getCode() + "\nmsg:" + e.getDisplayMessage());
     }
 }

@@ -1,7 +1,7 @@
 package com.exsun.commonlibrary.utils.data;
 
 
-import com.exsun.commonlibrary.utils.StringUtils;
+import com.exsun.commonlibrary.utils.other.StringUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;

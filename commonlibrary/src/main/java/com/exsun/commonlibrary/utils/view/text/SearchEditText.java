@@ -19,7 +19,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import com.exsun.commonlibrary.R;
-import com.exsun.commonlibrary.utils.DimenUtils;
+import com.exsun.commonlibrary.utils.other.DimenUtils;
 
 
 /**

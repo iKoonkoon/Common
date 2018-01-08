@@ -194,7 +194,9 @@ public class LogUtils
                 Logger.v(msg);
             }
             if (LOG_TO_FILE)
+            {
                 log2File(String.valueOf(level), tag, msg + tr == null ? "" : "\n" + Log.getStackTraceString(tr));
+            }
         }
     }
 

@@ -42,10 +42,10 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.exsun.commonlibrary.utils.CleanUtils;
-import com.exsun.commonlibrary.utils.IntentUtils;
-import com.exsun.commonlibrary.utils.ProcessUtils;
-import com.exsun.commonlibrary.utils.ShellUtils;
+import com.exsun.commonlibrary.utils.other.CleanUtils;
+import com.exsun.commonlibrary.utils.other.IntentUtils;
+import com.exsun.commonlibrary.utils.other.ProcessUtils;
+import com.exsun.commonlibrary.utils.other.ShellUtils;
 import com.exsun.commonlibrary.utils.encrypt.EncryptUtils;
 import com.exsun.commonlibrary.utils.io.FileUtils;
 

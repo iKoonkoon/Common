@@ -19,7 +19,7 @@ import android.view.animation.LinearInterpolator;
 import android.widget.Checkable;
 
 import com.exsun.commonlibrary.R;
-import com.exsun.commonlibrary.utils.DimenUtils;
+import com.exsun.commonlibrary.utils.other.DimenUtils;
 
 
 public class SmoothCheckBox extends View implements Checkable {

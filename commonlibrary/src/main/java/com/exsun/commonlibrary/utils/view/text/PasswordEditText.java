@@ -13,7 +13,7 @@ import android.util.AttributeSet;
 import android.support.v7.widget.AppCompatEditText;
 
 import com.exsun.commonlibrary.R;
-import com.exsun.commonlibrary.utils.DimenUtils;
+import com.exsun.commonlibrary.utils.other.DimenUtils;
 
 
 /**

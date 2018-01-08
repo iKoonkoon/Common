@@ -34,6 +34,12 @@ public class MvpActivity extends AppBaseActivity<MvpModel, MvpPresenter> impleme
     private TextView tv_test3;
     
     @Override
+    protected int getLayoutId()
+    {
+        return R.layout.activity_mvp;
+    }
+    
+    @Override
     protected void initPresenter()
     {
         mPresenter.setVM(this, mModel);
@@ -67,11 +73,7 @@ public class MvpActivity extends AppBaseActivity<MvpModel, MvpPresenter> impleme
         
     }
     
-    @Override
-    protected int getLayoutId()
-    {
-        return R.layout.activity_mvp;
-    }
+   
     
     
     @Override

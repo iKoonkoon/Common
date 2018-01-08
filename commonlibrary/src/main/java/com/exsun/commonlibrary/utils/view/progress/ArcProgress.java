@@ -14,7 +14,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.exsun.commonlibrary.R;
-import com.exsun.commonlibrary.utils.DimenUtils;
+import com.exsun.commonlibrary.utils.other.DimenUtils;
 
 
 public class ArcProgress extends View {

@@ -22,7 +22,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 
 import com.exsun.commonlibrary.R;
-import com.exsun.commonlibrary.utils.DimenUtils;
+import com.exsun.commonlibrary.utils.other.DimenUtils;
 
 
 /**
