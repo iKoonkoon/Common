@@ -60,8 +60,8 @@ public class MvcActivity extends AppBaseActivity implements HttpOnNextListener
     @Override
     protected void initView()
     {
-        tv_test0 = findViewById(R.id.tv_test0);
-        tv_test1 = findViewById(R.id.tv_test1);
+        tv_test0 = (TextView) findViewById(R.id.tv_test0);
+        tv_test1 = (TextView) findViewById(R.id.tv_test1);
     }
     
     @Override

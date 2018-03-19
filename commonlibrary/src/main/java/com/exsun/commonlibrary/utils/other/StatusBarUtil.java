@@ -110,11 +110,11 @@ public class StatusBarUtil
 //                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP)
 //                {
 //                    coordinatorLayout.setFitsSystemWindows(false);
-//                    contentView.setBackgroundColor(calculateStatusColor(color, statusBarAlpha));
-//                    boolean isNeedRequestLayout = contentView.getPaddingTop() < statusBarHeight;
+//                    mContentView.setBackgroundColor(calculateStatusColor(color, statusBarAlpha));
+//                    boolean isNeedRequestLayout = mContentView.getPaddingTop() < statusBarHeight;
 //                    if (isNeedRequestLayout)
 //                    {
-//                        contentView.setPadding(0, statusBarHeight, 0, 0);
+//                        mContentView.setPadding(0, statusBarHeight, 0, 0);
 //                        coordinatorLayout.post(new Runnable()
 //                        {
 //                            @Override
@@ -130,8 +130,8 @@ public class StatusBarUtil
 //                }
 //            } else
 //            {
-//                contentView.setPadding(0, statusBarHeight, 0, 0);
-//                contentView.setBackgroundColor(calculateStatusColor(color, statusBarAlpha));
+//                mContentView.setPadding(0, statusBarHeight, 0, 0);
+//                mContentView.setBackgroundColor(calculateStatusColor(color, statusBarAlpha));
 //            }
             setTransparentForWindow(activity);
         }

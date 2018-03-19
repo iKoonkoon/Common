@@ -54,9 +54,9 @@ public class MvpActivity extends AppBaseActivity<MvpModel, MvpPresenter> impleme
     @Override
     protected void initView()
     {
-        tv_test1 = findViewById(R.id.tv_test1);
-        tv_test2 = findViewById(R.id.tv_test2);
-        tv_test3 = findViewById(R.id.tv_test3);
+        tv_test1 = (TextView) findViewById(R.id.tv_test1);
+        tv_test2 = (TextView) findViewById(R.id.tv_test2);
+        tv_test3 = (TextView) findViewById(R.id.tv_test3);
     }
     
     @Override
@@ -151,6 +151,5 @@ public class MvpActivity extends AppBaseActivity<MvpModel, MvpPresenter> impleme
                 break;
         }
     }
-    
     
 }
